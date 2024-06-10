@@ -57,4 +57,8 @@ This work has been supported by Proyecto PID2019-109152GB-I00 financiado por MCI
 
 Pending...
 
+## License
+
+Released under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ---
