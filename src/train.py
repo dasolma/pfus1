@@ -1,23 +1,9 @@
 import os
 os.environ["SM_FRAMEWORK"] = "tf.keras"
 
-import argparse
-import json
-import numpy as np
-import cv2
-from matplotlib import pyplot as plt
-import traceback
-import statistics as stat
 import segmentation_models as sm
 import tensorflow as tf
-import random
 import pickle as pk
-from glob import glob
-import time
-import sys
-import tqdm
-import shutil
-from collections import defaultdict
 from utils import *
 
 tf.keras.backend.set_image_data_format('channels_last')

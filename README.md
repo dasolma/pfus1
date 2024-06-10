@@ -31,7 +31,7 @@ Each patient folder contains two files per image frame: a PNG file with the ultr
 Each JSON file with the segmentation polygons is structured as a list of eight dictionaries. Each dictionary has two keys: "label" and "pol". The "label" key identifies the organ with a string, and the "pol" key is a list of pairs (x, y) defining the points list of the polygon. An example of a JSON file is shown below:
 
 
-```json
+```
     [
       { 
         "pol": [[800, 400], [848, 320], ...., [796, 401]],
