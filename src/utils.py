@@ -154,3 +154,33 @@ def genenerate_epoch_graph(models, data_dir, output_dir):
 
     plt.subplots_adjust(wspace=0.05, hspace=0.1)
     plt.savefig(os.path.join(output_dir, f"epoch_{len(model['scores'][metric])}"))
+
+
+def visualize_image_and_masks(im, masks, organ_names=ORGAN_NAMES):
+    """
+    Visualize the original image and the 8 organ masks.
+    
+    Args:
+        im (numpy.ndarray): Grayscale image (H, W).
+        masks (numpy.ndarray): Segmentation masks (H, W, 9).
+        organ_names (list): List of organ names for the 8 classes.
+    """
+    # Create figure with 3 rows and 3 columns
+    fig, axes = plt.subplots(2, 5, figsize=(10, 4))
+    axes = axes.flatten()
+    
+    # Plot original image in the first subplot
+    axes[0].imshow(im, cmap='gray')
+    axes[0].set_title('Original Image', fontsize=12, fontweight='bold')
+    axes[0].axis('off')
+    
+    # Plot each of the 8 organ masks
+    for i in range(8):
+        axes[i + 1].imshow(masks[:, :, i], cmap='gray')
+        axes[i + 1].set_title(organ_names[i], fontsize=12, fontweight='bold')
+        axes[i + 1].axis('off')
+    
+    axes[-1].axis('off')
+    
+    plt.tight_layout()
+    plt.show()
